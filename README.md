@@ -2,8 +2,8 @@
 
 This is an *"Add Payment Card form"* for Android
 
-This app demonstrates how simple it is to securely add payment card data to your
-app with VeryGoodSecurity
+This app is meant to show how simple it is to securely add a payment cards via your own code
+app with VeryGoodSecurity's Secure Proxy and Vault services.
 
 
 A simple method of protecting card data 
