@@ -25,9 +25,9 @@ JSONObject card = new JSONObject();
             }
 ```
 
-2. Instantiate the Mobile_BackEndClient(URL vgs_url, String mbe_endpoint) with the VGS Proxy URL and desired endpoint.    
+- Instantiate the Mobile_BackEndClient(URL vgs_url, String mbe_endpoint) with the VGS Proxy URL and desired endpoint.    
 
-3. Persist the senstive data as a protected token & get a result at the UI Callback.  
+- Persist the senstive data as a protected token & get a result at the UI Callback.  
 
 
 ```
@@ -49,7 +49,7 @@ JSONObject card = new JSONObject();
             });
 ```
 
-4. the Card data is now protected within the VGS vault for later secured reveal or enrichment operations. 
+- the Card data is now protected within the VGS Vault for later use: Securely Authorize payments without raw/plaintext payment card data in your mobile backend. You can now safely & securely enrich other business processes, secure data analytics, etc. 
 
 ![Add Card Dialog](./docs/add_card_form.png)
 
