@@ -49,8 +49,9 @@ JSONObject card = new JSONObject();
             });
 ```
 
-- A secure "Surrogate" value is persisted within your mobile backend service.   
+- A secure "surrogate" or "token" value is persisted within your mobile backend service.   
 - The original Card data is now protected within the VGS Vault for later use. 
+- Use the secure "surrogate" or "token" to securely operate on sensistive data without handling it directly.
 - Securely authorize payments without directly handling raw/plaintext payment card data in your mobile backend. 
 - Safely & securely enrich other business processes, secure data analytics, etc. 
 
