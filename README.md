@@ -1,6 +1,6 @@
 # VGS Android "add new payment card" Demo
 
-This is an "Add Payment Card form" for Android
+This is an *"Add Payment Card form"* for Android
 
 This app demonstrates how simple it is to securely add payment card data to your
 app with VeryGoodSecurity
