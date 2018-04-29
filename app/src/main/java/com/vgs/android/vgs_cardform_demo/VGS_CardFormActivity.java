@@ -93,7 +93,8 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
                 e.printStackTrace();
             }
 
-            Mobile_BackEndClient api = new Mobile_BackEndClient(url);
+            // Mobile Backend Service with VGS Proxy re-write rule: Mobile_BackEndClient(url)
+            Mobile_BackEndClient api = new Mobile_BackEndClient(url); //URL reflects VGS proxy
             api.persistSensitive(card.toString(), new MobileBE_UICallback() {
                 @Override
                 public void onSuccess(String token) {
@@ -107,7 +108,6 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
 
                 }
             });
-
 
             //Toast.makeText(this, R.string.valid, Toast.LENGTH_SHORT).show();
         } else {

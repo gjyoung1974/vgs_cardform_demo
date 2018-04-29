@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Add credit or debit card</string>
+    <string name="app_name">VGS_Add_Card_Demo</string>
     <string name="purchase">Purchase</string>
     <string name="valid">Form is valid</string>
     <string name="invalid">Form is invalid</string>
