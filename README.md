@@ -1,6 +1,6 @@
 # VGS Android "add new payment card" Demo
 
-This is an *"Add Payment Card form"* for Android
+This is an *"add payment card form"* for Android
 
 This app is meant to show how simple it is to securely add a payment cards via your own code
 app with VeryGoodSecurity's Secure Proxy and Vault services.
