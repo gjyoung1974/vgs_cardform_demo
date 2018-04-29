@@ -7,7 +7,7 @@ This is an *" add payment card form"* for Android
 - Code changes are minimal. Just set VGS as a "proxy" to your mobile backend.  
 
 A simple method of protecting card data 
-- first marshall the card object into a JSON a structure : 
+- first marshall the payment card object into a JSON a structure : 
 
 ```
 JSONObject card = new JSONObject();
