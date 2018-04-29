@@ -1,7 +1,5 @@
 package com.vgs.android.vgs_cardform_demo;
 
-import com.vgs .android.vgs_cardform_demo.R;
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -91,9 +89,7 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
                 card.put("COUNTRYCODE", mCardForm.getCountryCode());
                 card.put("MOBILE", mCardForm.getMobileNumber());
 
-            }
-            catch(JSONException e)
-            {
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
 
@@ -115,7 +111,7 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
 
             //Toast.makeText(this, R.string.valid, Toast.LENGTH_SHORT).show();
         } else {
-           // mCardForm.validate();
+            // mCardForm.validate();
             Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
         }
     }
