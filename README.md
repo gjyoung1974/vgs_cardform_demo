@@ -56,5 +56,7 @@ JSONObject card = new JSONObject();
 
 ![Add Card Dialog](./docs/add_card_form.png)
 
-https://www.verygoodsecurity.com/
+Learn more at:
+https://www.verygoodsecurity.com
+https://www.verygoodsecurity.com/docs/overview
 
