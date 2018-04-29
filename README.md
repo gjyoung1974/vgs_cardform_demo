@@ -50,7 +50,9 @@ JSONObject card = new JSONObject();
 ```
 
 - A secure "Surrogate" value is persisted within your mobile backend service.   
-- The original Card data is now protected within the VGS Vault for later use: Securely Authorize payments without raw/plaintext payment card data in your mobile backend. You can now safely & securely enrich other business processes, secure data analytics, etc. 
+- The original Card data is now protected within the VGS Vault for later use. 
+- Securely authorize payments without directly handling raw/plaintext payment card data in your mobile backend. 
+- Safely & securely enrich other business processes, secure data analytics, etc. 
 
 ![Add Card Dialog](./docs/add_card_form.png)
 
