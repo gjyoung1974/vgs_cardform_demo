@@ -1,13 +1,13 @@
 # VGS Android "add new payment card" Demo
 
-This is an *"add payment card form"* for Android
+This is an *" add payment card form"* for Android
 
 - This demo shows a simple solution to securely adding payment cards to an Android within your own code.   
 - It is very simple to achieve PCI DSS v3.2 compliance with the VGS Secure Proxy and Vault components.   
 - Code changes are minimal. Just set VGS as a "proxy" to your mobile backend.  
 
 A simple method of protecting card data 
-- first marshall the card object as a JSON a strucure: 
+- first marshall the card object into a JSON a structure : 
 
 ```
 JSONObject card = new JSONObject();
@@ -27,7 +27,7 @@ JSONObject card = new JSONObject();
 
 - Instantiate the Mobile_BackEndClient(URL vgs_proxy_url, String your_mbe_api_endpoint) with the VGS Proxy URL and desired endpoint.    
 
-- Persist the senstive data in the VGS Vault & get a result at the UI Callback.  
+- Persist the sensitive data in the VGS Vault & get a result at the UI Callback.  
 
 
 ```
@@ -49,7 +49,7 @@ JSONObject card = new JSONObject();
             });
 ```
 
-- A secure "Serrogate" value is persisted within your mobile backend service.   
+- A secure "Surrogate" value is persisted within your mobile backend service.   
 - The original Card data is now protected within the VGS Vault for later use: Securely Authorize payments without raw/plaintext payment card data in your mobile backend. You can now safely & securely enrich other business processes, secure data analytics, etc. 
 
 ![Add Card Dialog](./docs/add_card_form.png)
