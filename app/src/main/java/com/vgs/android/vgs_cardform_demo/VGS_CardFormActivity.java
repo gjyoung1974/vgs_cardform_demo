@@ -1,5 +1,7 @@
 package com.vgs.android.vgs_cardform_demo;
 
+import com.vgs .android.vgs_cardform_demo.R;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -72,7 +74,7 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
         URL url = null;
         try {
             //todo: get this property from another means
-            url = new URL("https://tntlvnzzqsz.SANDBOX.verygoodproxy.com");
+            url = new URL(this.getString(R.string.proxy_url));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -82,6 +84,13 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
             JSONObject card = new JSONObject();
             try {
                 card.put("CCN", mCardForm.getCardNumber());
+                card.put("CVV", mCardForm.getCvv());
+                card.put("MONTH", mCardForm.getExpirationMonth());
+                card.put("YEAR", mCardForm.getExpirationYear());
+                card.put("POST_CODE", mCardForm.getPostalCode());
+                card.put("COUNTRYCODE", mCardForm.getCountryCode());
+                card.put("MOBILE", mCardForm.getMobileNumber());
+
             }
             catch(JSONException e)
             {

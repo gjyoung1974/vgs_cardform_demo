@@ -6,4 +6,5 @@
     <string name="light_theme_form">Light Theme</string>
     <string name="dark_theme_form">Dark Theme</string>
     <string name="scan_with_card_io">Scan with card.io</string>
+    <string name="proxy_url">https://tntlvnzzqsz.SANDBOX.verygoodproxy.com</string>
 </resources>
