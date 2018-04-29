@@ -70,6 +70,7 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
 
 
         URL url = null;
+        String mbe_endpoint = this.getString(R.string.mbe_endpoint);
         try {
             //todo: get this property from another means
             url = new URL(this.getString(R.string.proxy_url));
@@ -94,7 +95,7 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
             }
 
             // Mobile Backend Service with VGS Proxy re-write rule: Mobile_BackEndClient(url)
-            Mobile_BackEndClient api = new Mobile_BackEndClient(url); //URL reflects VGS proxy
+            Mobile_BackEndClient api = new Mobile_BackEndClient(url, mbe_endpoint); //URL reflects VGS proxy
             api.persistSensitive(card.toString(), new MobileBE_UICallback() {
                 @Override
                 public void onSuccess(String token) {
@@ -109,9 +110,8 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
                 }
             });
 
-            //Toast.makeText(this, R.string.valid, Toast.LENGTH_SHORT).show();
         } else {
-            // mCardForm.validate();
+            // mCardForm.validate(); do someting as a fallback?
             Toast.makeText(this, R.string.invalid, Toast.LENGTH_SHORT).show();
         }
     }

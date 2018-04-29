@@ -12,15 +12,16 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.HashMap;
 
 public class Mobile_BackEndClient {
 
     public URL baseURL;
+    public String mbe_endpoint;
     private MobileBE_UICallback responseHandler;
 
-    public Mobile_BackEndClient(URL baseURL) {
+    public Mobile_BackEndClient(URL baseURL, String mbe_endpoint) {
         this.baseURL = baseURL;
+        this.mbe_endpoint = mbe_endpoint;
 
     }
 
@@ -33,8 +34,8 @@ public class Mobile_BackEndClient {
 
 
     private class mbeResponse {
-        public String result;
 
+        public String result;
         public MobileBE_Error error;
 
         public mbeResponse() {
@@ -67,7 +68,7 @@ public class Mobile_BackEndClient {
             }
 
             try {
-                response = makeMBERequest("POST", "/post", json);
+                response = makeMBERequest("POST", mbe_endpoint, json);
             } catch (IOException e) {
                 e.printStackTrace();
                 response.error = MobileBE_Error.ServerError;
@@ -111,9 +112,7 @@ public class Mobile_BackEndClient {
         osw.flush();
         osw.close();
 
-
         int status = conn.getResponseCode();
-
 
         switch (status) {
             case HttpURLConnection.HTTP_OK:
@@ -143,12 +142,13 @@ public class Mobile_BackEndClient {
 
 }
 
+//Some basic failures for VGS proxy:
 enum MobileBE_Error {
     NoData, InvalidData, BadRequest, ServerError, Unauthorized
 }
 
+//Basic callback method for UI
 interface MobileBE_UICallback {
-
     void onSuccess(String token);
 
     void onFailure(MobileBE_Error error);
