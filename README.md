@@ -1,6 +1,6 @@
 # VGS Android "add new payment card" Demo
 
-This is an *" add payment card form"* for Android
+This is an **"add payment card form"** for Android
 
 - This demo shows a simple solution to securely adding payment cards to an Android within your own code.   
 - It is very simple to achieve PCI DSS v3.2 compliance with the VGS Secure Proxy and Vault components.   
