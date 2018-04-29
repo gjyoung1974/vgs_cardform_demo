@@ -1,4 +1,4 @@
-# VGS Add Card Form Demo
+# VGS Android "add new payment card" Demo
 
 This is an "Add Payment Card form" for Android
 
