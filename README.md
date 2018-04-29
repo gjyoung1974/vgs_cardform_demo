@@ -25,7 +25,7 @@ JSONObject card = new JSONObject();
             }
 ```
 
-- Instantiate the Mobile_BackEndClient(URL vgs_url, String mbe_endpoint) with the VGS Proxy URL and desired endpoint.    
+- Instantiate the Mobile_BackEndClient(URL vgs_proxy_url, String your_mbe_api_endpoint) with the VGS Proxy URL and desired endpoint.    
 
 - Persist the senstive data as a protected token & get a result at the UI Callback.  
 
