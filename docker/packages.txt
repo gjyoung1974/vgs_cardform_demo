@@ -1,5 +1,0 @@
-add-ons;addon-google_apis-google-24
-build-tools;26.0.0
-platform-tools
-platforms;android-26
-
