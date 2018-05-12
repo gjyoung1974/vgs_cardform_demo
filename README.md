@@ -58,7 +58,7 @@ JSONObject card = new JSONObject();
 Example form:    
 ![Add Card Dialog](./docs/add_card_form.png)    
 
-Exmaple VGS Dashboard Rules config for this demo:    
+Example VGS Dashboard Rules config for this demo:    
 ![VGS Rules Config](./docs/rules.png)    
 
 Learn more at:
