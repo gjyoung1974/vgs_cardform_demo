@@ -53,9 +53,13 @@ JSONObject card = new JSONObject();
 - The original Card data is now protected within the VGS Vault for later use. 
 - Use the secure "surrogate" or "token" to securely operate on sensistive data without handling it directly.
 - Securely authorize payments without directly handling raw/plaintext payment card data in your mobile backend. 
-- Safely & securely enrich other business processes, secure data analytics, etc. 
+- Safely & securely enrich other business processes, secure data analytics, etc.
 
-![Add Card Dialog](./docs/add_card_form.png)
+Example form:    
+![Add Card Dialog](./docs/add_card_form.png)    
+
+Exmaple VGS Dashboard Rules config for this demo:    
+![VGS Rules Config](./docs/rules.png)    
 
 Learn more at:
 https://www.verygoodsecurity.com    
