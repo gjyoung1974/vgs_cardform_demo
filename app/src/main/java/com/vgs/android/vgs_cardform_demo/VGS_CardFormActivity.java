@@ -23,7 +23,12 @@ import java.net.URL;
 import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARDID;
 import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARDTYPE;
 import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_CCN;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_COUNTRYCODE;
 import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_CVV;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_MOBILE;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_MONTH;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_POST_CODE;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_YEAR;
 
 public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFormSubmitListener,
         CardEditText.OnCardTypeChangedListener {
@@ -99,6 +104,7 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
                 card.put("POST_CODE", mCardForm.getPostalCode());
                 card.put("COUNTRYCODE", mCardForm.getCountryCode());
                 card.put("MOBILE", mCardForm.getMobileNumber());
+                card.put("CARDTYPE", mCardForm.getCardEditText().getCardType().toString());
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -124,7 +130,8 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
                     // Create a new map of values, where column names are the keys
                     ContentValues values = new ContentValues();
                     values.put(COLUMN_NAME_CARDID, 1);
-                    values.put(COLUMN_NAME_CARDTYPE, 1); //fix this get from form validation
+
+                    values.put(COLUMN_NAME_CARDTYPE, mCardForm.getCardEditText().getCardType().toString());
                     try {
                         values.put(COLUMN_NAME_CARD_CCN, jObject.getString("CCN"));
                     } catch (JSONException e) {
@@ -133,6 +140,36 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
 
                     try {
                         values.put(COLUMN_NAME_CARD_CVV, jObject.getString("CVV"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        values.put(COLUMN_NAME_CARD_MONTH, jObject.getString("MONTH"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        values.put(COLUMN_NAME_CARD_YEAR, jObject.getString("YEAR"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        values.put(COLUMN_NAME_CARD_POST_CODE, jObject.getString("POST_CODE"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        values.put(COLUMN_NAME_CARD_COUNTRYCODE, jObject.getString("COUNTRYCODE"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        values.put(COLUMN_NAME_CARD_MOBILE, jObject.getString("MOBILE"));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

@@ -12,13 +12,15 @@ public final class CardStorageContract {
     public static class CardEntry implements BaseColumns {
         public static final String TABLE_NAME = "card";
         public static final String COLUMN_NAME_CARDID = "cardid";
-        public static final String COLUMN_NAME_CARDTYPE = "cardtype";
 
+        // 'tokenized' card details
+        public static final String COLUMN_NAME_CARDTYPE = "cardtype";
         public static final String COLUMN_NAME_CARD_CCN = "ccn";
         public static final String COLUMN_NAME_CARD_CVV = "cvv";
         public static final String COLUMN_NAME_CARD_MONTH = "month";
         public static final String COLUMN_NAME_CARD_YEAR = "year";
 
+        // 'tokenized' personal details
         public static final String COLUMN_NAME_CARD_POST_CODE = "post_code";
         public static final String COLUMN_NAME_CARD_COUNTRYCODE = "countrycode";
         public static final String COLUMN_NAME_CARD_MOBILE = "mobile";
