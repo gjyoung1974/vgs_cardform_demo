@@ -60,7 +60,8 @@ Example form:
 
 Example VGS Dashboard Rules config for this demo:    
 
-Here we add rules to intercept and securely transform our data elements  
+In the VGS Dashboard: http://dashboard.verygoodsecurity.com  
+ we add rules to intercept and securely transform our data elements    
 ![VGS Rules Config](./docs/rules.png)   
 Select all the fields we post to our mobile backend API & set the secure transform rules
 
