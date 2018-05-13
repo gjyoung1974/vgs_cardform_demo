@@ -58,11 +58,15 @@ JSONObject card = new JSONObject();
 Example form:    
 ![Add Card Dialog](./docs/add_card_form.png)    
 
-Example VGS Dashboard Rules config for this demo:    
-![VGS Rules Config](./docs/rules.png)     
+Example VGS Dashboard Rules config for this demo:
+
+Here we add rules to intercept and securely transform our data elements . 
+![VGS Rules Config](./docs/rules.png)      
+Select all the fields we post to our mobile backend API & set the secure transform rules
 
 Persist a card results:     
-![Persist a card results](./docs/vgs-android.png)        
+![Persist a card results](./docs/vgs-android.png)
+"Tokenized" data is stored in our Mobile backend and stored as tokens in our local SQLite database        
 
 Learn more at:
 https://www.verygoodsecurity.com    
