@@ -1,5 +1,7 @@
 package com.vgs.android.vgs_cardform_demo;
 
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.*;
+
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,15 +22,6 @@ import org.json.JSONObject;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARDID;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARDTYPE;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_CCN;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_COUNTRYCODE;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_CVV;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_MOBILE;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_MONTH;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_POST_CODE;
-import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_YEAR;
 
 public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFormSubmitListener,
         CardEditText.OnCardTypeChangedListener {
