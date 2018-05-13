@@ -59,7 +59,10 @@ Example form:
 ![Add Card Dialog](./docs/add_card_form.png)    
 
 Example VGS Dashboard Rules config for this demo:    
-![VGS Rules Config](./docs/rules.png)    
+![VGS Rules Config](./docs/rules.png)     
+
+Persist a card results:     
+![Persist a card results](./docs/vgs-android.png)        
 
 Learn more at:
 https://www.verygoodsecurity.com    
