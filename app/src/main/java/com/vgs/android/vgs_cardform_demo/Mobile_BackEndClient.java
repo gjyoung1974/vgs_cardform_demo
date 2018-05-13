@@ -101,7 +101,8 @@ public class Mobile_BackEndClient {
         URL requestURL = new URL(baseURL.toExternalForm() + path);
         HttpURLConnection conn = (HttpURLConnection) requestURL.openConnection();
         conn.setRequestProperty("Content-Type", "application/json");
-        //TODO define whatever headers your application requires
+
+        // Here: define whatever headers your application requires
         //conn.setRequestProperty("User-Agent", String.format("MBE-Android-SDK/%s (build %s)", BuildConfig.VERSION_NAME, BuildConfig.VERSION_NAME));
         conn.setRequestMethod(method);
         conn.connect();

@@ -1,5 +1,7 @@
 package com.vgs.android.vgs_cardform_demo;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
@@ -18,6 +20,11 @@ import org.json.JSONObject;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARDID;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARDTYPE;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_CCN;
+import static com.vgs.android.vgs_cardform_demo.CardStorageContract.CardEntry.COLUMN_NAME_CARD_CVV;
+
 public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFormSubmitListener,
         CardEditText.OnCardTypeChangedListener {
 
@@ -27,6 +34,9 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
     private SupportedCardTypesView mSupportedCardTypesView;
 
     protected CardForm mCardForm;
+
+    //open a SQLite DB for local storage:
+    CardStorageDBHelper mDbHelper = new CardStorageDBHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +109,40 @@ public class VGS_CardFormActivity extends AppCompatActivity implements OnCardFor
             api.persistSensitive(card.toString(), new MobileBE_UICallback() {
                 @Override
                 public void onSuccess(String token) {
-                    Toast.makeText(mCardForm.getContext(), token, Toast.LENGTH_SHORT).show();
+
+                    // Parse the result from VGS proxy
+                    JSONObject jObject = new JSONObject();
+                    try {
+                        jObject = new JSONObject(token);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    // Gets the data repository in write mode
+                    SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+                    // Create a new map of values, where column names are the keys
+                    ContentValues values = new ContentValues();
+                    values.put(COLUMN_NAME_CARDID, 1);
+                    values.put(COLUMN_NAME_CARDTYPE, 1); //fix this get from form validation
+                    try {
+                        values.put(COLUMN_NAME_CARD_CCN, jObject.getString("CCN"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        values.put(COLUMN_NAME_CARD_CVV, jObject.getString("CVV"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    // Insert the new row, returning the primary key value of the new row
+                    long newRowId = db.insert("card", null, values);
+
+                    // Print the result locally
+                    Toast.makeText(mCardForm.getContext(), token, Toast.LENGTH_LONG).show();
+
 
                 }
 
