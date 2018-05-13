@@ -67,7 +67,12 @@ Select all the fields we post to our mobile backend API & set the secure transfo
 
 Persist a card results:     
 ![Persist a card results](./docs/vgs-android.png)    
-"Tokenized" data is stored in our Mobile backend and stored as tokens in our local SQLite database              
+"Tokenized" data is stored in our Mobile backend and stored as tokens in our local SQLite database       
+
+How to use the stored data?
+
+Later, when we need to securely operate with the card data we can simply perform the reverse operation
+Create a new rule to "Reveal" the sensitive data to our upsream processor API endpoint. We simply used the stored tokens as input to the revealing rule. The VGS proxy will securely transform the tokens back to the original value & pass them onto the upstream API.     
 
 Learn more at:
 https://www.verygoodsecurity.com    
