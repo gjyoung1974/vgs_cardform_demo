@@ -2,9 +2,9 @@
 
 This is an **"add payment card form"** for Android
 
-- This demo shows a simple solution to securely add payment cards to an Android add, within your own code.   
+- This demo shows a simple solution to securely add payment cards to an Android application, within your own code.   
 - It is very simple to achieve PCI DSS v3.2 compliance with the VGS Secure Proxy and Vault components.   
-- Code changes are minimal. Just set VGS as a "proxy" to your mobile backend.  
+- Code changes are minimal. Just set VGS as a "proxy" to your mobile backend. Leveraging VGS's Secure Proxy and Vault compomnents will remove the footprint of sensitive data from your application & databases.
 
 A simple method of protecting card data 
 - first marshall the payment card object into a JSON a structure : 
