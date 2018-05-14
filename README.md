@@ -82,4 +82,3 @@ https://www.verygoodsecurity.com/docs/overview
 2018
 ~Gordon
 ```
-
